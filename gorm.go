@@ -10,7 +10,9 @@ import (
 	"gorm.io/gorm"
 )
 
-func Open(options dbx.Options, gormOpts ...gorm.Option) (*gorm.DB, error) {
+type Options = dbx.Options
+
+func Open(options Options, gormOpts ...gorm.Option) (*gorm.DB, error) {
 
 	var dialector gorm.Dialector
 	switch options.Driver {
